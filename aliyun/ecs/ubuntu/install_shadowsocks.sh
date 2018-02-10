@@ -11,11 +11,12 @@ sudo pip install shadowsocks
 sudo mkdir -p touch /etc/shadowsocks
 sudo cat > /etc/shadowsocks/shadowsocks.json <<EOF
 {
-  "server": "0.0.0.0",
-  "server_port": 20444,
-  "password": "***",
+  "server": "1.2.3.4",
+  "server_port": 8000,
+  "local_port": 1080,
+  "password": "mypassword",
   "timeout": 300,
-  "method": "rc4-md5"
+  "method": "aes-256-cfb"
 }
 EOF
 
