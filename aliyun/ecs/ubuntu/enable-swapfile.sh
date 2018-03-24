@@ -1,3 +1,4 @@
+#!/bin/bash
 # Create and setup /swapfile as a 4GB swap file 
 export SUDO=sudo
 free -m
@@ -13,7 +14,7 @@ $SUDO swapon /swapfile
 $SUDO swapon -s
 free -m
 # Persist swap file setting across reboots
-$SUDO echo '/swapfile	none 		swap 	sw 0 0' >> /etc/fstab
+$SUDO bash -c "echo '/swapfile	none 		swap 	sw 0 0' >> /etc/fstab"
 
 # Change and persist the swappiness setting
 $SUDO sysctl vm.swappiness=10
